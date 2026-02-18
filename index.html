@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Inloggning</title>
+  <title>Frågor</title>
   <style>
     body {
       font-family: system-ui, -apple-system, sans-serif;
@@ -74,27 +74,36 @@
 </head>
 <body>
   <div class="login-box">
-    <h1>frågor</h1>
-  
-    <form action="https://formsubmit.co/apelsingpt@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Nytt svar från frågor">
-      <input type="hidden" name="_next" value="https://www.google.se">
-      <input type="hidden" name="_autoresponse" value="Tack för dina svar!">
-      <input type="hidden" name="_captcha" value="false">
+    <h1>Frågor</h1>
+
+    <!-- Byt ut action till DIN Formspree-endpoint! -->
+    <form action="https://formspree.io/f/xabcdefg" method="POST">
+
+      <!-- Dolda fält för bättre mail -->
+      <input type="hidden" name="_subject" value="Nytt elevsvar - Frågor">
+      <input type="hidden" name="_language" value="sv">
 
       <div class="form-group">
-        <label for="email">fråga 1</label>
-        <input type="text" id="email" name="Fråga 1" autocomplete="off" required placeholder="Skriv ditt svar här">
+        <label for="q1">Fråga 1</label>
+        <input type="text" id="q1" name="Fråga 1" autocomplete="off" required placeholder="Skriv ditt svar här">
       </div>
-    
+
       <div class="form-group">
-        <label for="password">fråga 2</label>
-        <input type="text" id="password" name="Fråga 2" autocomplete="off" required placeholder="Skriv ditt svar här">
+        <label for="q2">Fråga 2</label>
+        <input type="text" id="q2" name="Fråga 2" autocomplete="off" required placeholder="Skriv ditt svar här">
       </div>
-      <button type="submit">svara</button>
+
+      <!-- Extra fält för att veta vem som svarat (valfritt men rekommenderat) -->
+      <div class="form-group">
+        <label for="elev">Ditt namn / klass (valfritt)</label>
+        <input type="text" id="elev" name="Elev / Klass">
+      </div>
+
+      <button type="submit">Skicka svar</button>
     </form>
+
     <div class="footer">
-      <p></p>
+      <p>Svar skickas till läraren</p>
     </div>
   </div>
 </body>
